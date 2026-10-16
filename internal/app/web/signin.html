@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>管理员授权 · Hark2API</title>
+  <link rel="icon" href="/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/signin.css">
+  <script src="/signin.js" defer></script>
+</head>
+<body class="auth-page">
+  <header class="auth-header">
+    <a class="auth-brand" href="/signin.html" aria-label="Hark2API 管理员授权">
+      <img src="/mark.svg" alt="" width="32" height="32">
+      <span>hark<span class="brand-light">2api</span></span>
+    </a>
+    <span class="header-label">管理控制台</span>
+  </header>
+  <main class="auth-main">
+    <section class="auth-content" aria-labelledby="auth-title">
+      <div class="auth-symbol" aria-hidden="true"><img src="/auth-key-round.svg" alt="" width="22" height="22"></div>
+      <h1 id="auth-title">管理员授权</h1>
+      <p class="auth-subtitle">登录 Hark2API 控制台</p>
+      <form id="signin" novalidate>
+        <label for="admin-key">管理员密钥</label>
+        <div class="key-field">
+          <input type="password" id="admin-key" name="key" autocomplete="current-password" placeholder="输入管理员密钥" required autofocus aria-describedby="error" spellcheck="false" autocapitalize="off">
+          <button class="visibility-toggle" id="toggle-key" type="button" aria-label="显示密钥" aria-pressed="false" title="显示密钥"><img src="/auth-eye.svg" alt="" width="18" height="18"></button>
+        </div>
+        <div id="error" class="auth-error" role="alert" aria-live="polite"></div>
+        <button id="authorize" class="authorize-button" type="submit">
+          <span id="submit-label">进入控制台</span>
+          <img id="submit-arrow" src="/auth-arrow-right.svg" alt="" width="18" height="18">
+          <span class="auth-spinner" id="submit-spinner" hidden aria-hidden="true"></span>
+        </button>
+      </form>
+      <div class="auth-target"><span>当前网关</span><span id="gateway-host"></span></div>
+    </section>
+  </main>
+  <footer class="auth-footer"><span>Hark2API</span><span>管理员访问</span></footer>
+</body>
+</html>

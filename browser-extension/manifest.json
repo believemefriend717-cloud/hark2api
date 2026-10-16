@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Hark2API 账号导入助手",
+  "version": "0.3.1",
+  "description": "在当前浏览器完成 Hark 登录，向已配置的 Hark2API 网关回传此次导入的会话。",
+  "permissions": ["cookies", "storage", "scripting", "alarms"],
+  "host_permissions": ["https://hark.com/*", "http://127.0.0.1:8789/*"],
+  "background": {"service_worker": "background.js"},
+  "content_scripts": [{"matches": ["http://127.0.0.1:8789/*"], "js": ["origins.js", "dashboard.js"], "run_at": "document_start"}]
+}
